@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+        <title>IoT TARDIS Project Demonstration</title>
+        
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+        
+        <style>
+.task-list-item { list-style-type: none; } .task-list-item-checkbox { margin-left: -20px; vertical-align: middle; }
+</style>
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        
+        
+    </head>
+    <body>
+        <link rel="stylesheet" type="text/css" href="https://files.hoppel.us/css/reset_rick.css" media="all">
+<link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Fjalla+One%7CAnaheim'>
+<style>#preview-box {background-color: rgba(1,1,1,0.1);padding: 1px 10px;border-radius: 10px;}</style>
+<link id="linkstyle" rel='stylesheet' href='https://files.hoppel.us/css/lodge-default.css'/>
+<div id="preview-box">
+    <strong>preview another css ...</strong>
+    <select style="width:100%" id="themes">
+        <option value="https://files.hoppel.us/css/default.css"      >default</option>
+        <option value="https://files.hoppel.us/css/lodge-default.css">lodge-default</option>
+        <option value="https://files.hoppel.us/css/lodge-brown.css"  >lodge-brown</option>
+        <option value="https://files.hoppel.us/css/lodge-green.css"  >lodge-green</option>
+        <option value="https://files.hoppel.us/css/reset_rick.css"   >reset_rick</option>
+        <option value="https://files.hoppel.us/css/github-markdown.css">github-markdown</option>
+        <option value="https://files.hoppel.us/css/markdown.css"     >markdown</option>
+        <option value="https://files.hoppel.us/css/markdown-alt.css" >markdown-alt</option>
+        <option value="https://files.hoppel.us/css/markdown1.css"    >markdown1</option>
+        <option value="https://files.hoppel.us/css/markdown2.css"    >markdown2</option>
+        <option value="https://files.hoppel.us/css/markdown3.css"    >markdown3</option>
+        <option value="https://files.hoppel.us/css/markdown4.css"    >markdown4</option>
+        <option value="https://files.hoppel.us/css/markdown5.css"    >markdown5</option>
+        <option value="https://files.hoppel.us/css/markdown6.css"    >markdown6</option>
+        <option value="https://files.hoppel.us/css/markdown7.css"    >markdown7</option>
+        <option value="https://files.hoppel.us/css/markdown8.css"    >markdown8</option>
+        <option value="https://files.hoppel.us/css/markdown9.css"    >markdown9</option>
+        <option value="https://files.hoppel.us/css/markdown10.css"   >markdown10</option>
+        <option value="https://files.hoppel.us/css/avenir-white.css" >avenir-white</option>
+        <option value="https://files.hoppel.us/css/foghorn.css"      >foghorn</option>
+        <option value="https://files.hoppel.us/css/screen.css"       >screen</option>
+        <option value="https://files.hoppel.us/css/swiss.css"        >swiss</option>
+        <option value="https://files.hoppel.us/css/retro.css"        >retro</option>
+        <option value="https://files.hoppel.us/css/reset.css">       reset</option>
+</select></div>
+<script> var linkstyle = document.getElementById('linkstyle'); var themes = document.getElementById('themes'); themes.onchange = function(e) {linkstyle.href = themes.value; };</script>`
+<p><img src="https://portfolio.hoppel.us/resources/logo/techDogs_logo_white_bar_wide.png" alt="techdogs Logo"></p>
+<h1 id="iot-tardis-project-demonstration">IoT TARDIS Project Demonstration</h1>
+<br/>
+<h2 id="status-a-style%22colorred%22betaa-a-style%22colorwhite%22aa-a-style%22colorred%22a">status: <a style="color:Red">Beta[</a> <a style="color:White">A</a> <a style="color:Red">]</a></h2>
+<br/>
+<h1 style="color:#7faedb;font-size:30px; text-transform: none;">[host: <script language="JavaScript"> document.write(window.location.hostname +'</a>' );</script>]</h1><br/>
+<h1 class="author" style="font-size:50px"; >creator: Richard Hoppel</h1><br/>
+<h6 id="click-on-graphics-for-action--expanded-information">click on graphics for action &amp; expanded information</h6>
+<p class="intro">the remote control center for the universe<br/>[Raspberry Pi, NodeMCU and Node-Red]</p>
+<h2 id="hardware-platforms-one-tiny-server--one-tiny-remote-node">Hardware Platforms [one <strong>tiny</strong> server &amp; one <strong>tiny</strong> remote node]</h2>
+<ul>
+<li>self-contained host platform: <strong>Raspberry Pi 3 [node-red flow editor &amp; controller, Apache webserver, webcam]</strong></li>
+<li>remote node platform: <strong>WeMos D1 mini ESP8266</strong></li>
+</ul>
+<p><a href="https://files.hoppel.us/techdogs/TARDIS/system_demo.png"><img src="https://files.hoppel.us/techdogs/TARDIS/system_demo_tn.png" alt="demo_tn"></a> <a href="https://files.hoppel.us/techdogs/TARDIS/breadboard_notes.png"><img src="https://files.hoppel.us/techdogs/TARDIS/breadboard_notes_tn.png" alt="breadboard_tn"></a> <a href="https://files.hoppel.us/techdogs/TARDIS/schematic_bb.png"><img src="https://files.hoppel.us/techdogs/TARDIS/schematic_bb_tn.png" alt="schematic_bb_tn"></a></p>
+<h6 id="click-to-project-slide-3-for-demo-diagram">click to project slide <strong>3</strong> for demo diagram</h6>
+<div class="iframe_container">
+   <iframe src="https://onedrive.live.com/embed?cid=88FCEE2150B75169&amp;resid=88FCEE2150B75169%21394381&amp;authkey=AH8Seg6YfNgh9yI&amp;em=2&amp;wdAr=1.7777777777777777" width="1100x" height="643x" frameborder="0">This is an embedded <a target="_blank" href="https://office.com">Microsoft Office</a> presentation, powered by <a target="_blank" href="https://office.com/webapps">Office</a>.</iframe>
+</div>
+<h6 id="k9-node-live-platform-esp8266">K9-node Live! [platform: ESP8266]</h6>
+<img src="http://demo.techdogs.us:56000/mjpeg" alt="Webcam not available - try refreshing screen " >
+<h2 id="display-image-legend-platform-k9-node-8266-based">Display Image Legend [platform: <strong>K9-node</strong> (8266 based)]</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Status</td>
+<td>I/O Pin Status</td>
+<td>WebCam</td>
+</tr>
+<tr>
+<td><a href="https://files.hoppel.us/techdogs/TARDIS/display_legend_1.png"><img src="https://files.hoppel.us/techdogs/TARDIS/display_legend_1_tn.png" alt="display_legend_1_tn"></a></td>
+<td><a href="https://files.hoppel.us/techdogs/TARDIS/display_legend_2.png"><img src="https://files.hoppel.us/techdogs/TARDIS/display_legend_2_tn.png" alt="display_legend_2_tn"></a></td>
+<td><a href="https://files.hoppel.us/techdogs/TARDIS/display_legend_3.png"><img src="https://files.hoppel.us/techdogs/TARDIS/display_legend_3_tn.png" alt="display_legend_3_tn"></a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="live-interactive-demo">Live Interactive Demo</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Node-Red Web UI controls K9-node</td>
+<td>Monitor Node-Red Status</td>
+<td>K9-node live Webcam</td>
+</tr>
+<tr>
+<td><a href="http://demo.techdogs.us:1880/ui/#!/0?socketid=7n2RyrGfx_OxjrShAAAI"><img src="https://files.hoppel.us/techdogs/TARDIS/main_ui_tn_live.png" alt="main_ui_tn_live"></a></td>
+<td><a href="http://demo.techdogs.us:1880/#flow/e0c6f6b6.0d5c68"><img src="https://files.hoppel.us/techdogs/TARDIS/MainControl__a_tn_live.png" alt="main_tn_live"></a></td>
+<td><a href="http://demo.techdogs.us:56000/mjpeg"><img src="https://files.hoppel.us/techdogs/TARDIS/K9_2_live_tn.png" alt="K9_2_live_tn"></a></td>
+</tr>
+<tr>
+<td>default user is READ-only</td>
+<td>user: <em>node-red-user</em></td>
+<td><a href="http://demo.techdogs.us:1880/ui/#!/6?socketid=_3Lu59VILtPfKDlyAAAE"><img src="https://files.hoppel.us/techdogs/TARDIS/panic.png" alt="panic"></a></td>
+</tr>
+<tr>
+<td></td>
+<td>password: <em>node-red-user-default</em></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="project-images-static">Project Images [static]</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Status</td>
+<td>I/O Pins</td>
+<td>Schematic</td>
+<td>Breadboard</td>
+</tr>
+<tr>
+<td><a href="https://files.hoppel.us/techdogs/TARDIS/K9_1.png"><img src="https://files.hoppel.us/techdogs/TARDIS/K9_1_tn.png" alt="K9_1_tn"></a></td>
+<td><a href="https://files.hoppel.us/techdogs/TARDIS/K9_2.png"><img src="https://files.hoppel.us/techdogs/TARDIS/K9_2_tn.png" alt="K9_2_tn"></a></td>
+<td><a href="https://files.hoppel.us/techdogs/TARDIS/IoT_TARDIS_Demo_schem.png"><img src="https://files.hoppel.us/techdogs/TARDIS/IoT_TARDIS_Demo_schem_tn.png" alt="schematic_tn"></a></td>
+<td><a href="https://files.hoppel.us/techdogs/TARDIS/IoT_TARDIS_Demo_bb.png"><img src="https://files.hoppel.us/techdogs/TARDIS/IoT_TARDIS_Demo_bb_tn.png" alt="bb_tn"></a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="node-red-control-flows-platform-raspberry-pi">Node-Red Control Flows (platform: <strong>Raspberry Pi</strong>)</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Configuration</td>
+<td>Main Control</td>
+<td>Update Node</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://files.hoppel.us/techdogs/TARDIS/Configuration_a.png"><img src="https://files.hoppel.us/techdogs/TARDIS/Configuration_a_tn.png" alt="nr-config_tn"></a></td>
+<td><a href="https://files.hoppel.us/techdogs/TARDIS/MainControl__a.png"><img src="https://files.hoppel.us/techdogs/TARDIS/MainControl__a_tn.png" alt="main_tn"></a></td>
+<td><a href="https://files.hoppel.us/techdogs/TARDIS/UpdateNodeDB_a_tn.png"><img src="https://files.hoppel.us/techdogs/TARDIS/UpdateNodeDB_a_tn.png" alt="update_tn"></a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="k9-node-software-diagrams"><strong>K9-Node</strong> Software Diagrams</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Draw_io diagrams</td>
+<td>component diagram</td>
+<td>use diagram</td>
+<td>entity diagram</td>
+<td>class diagram</td>
+<td>sql diagram</td>
+</tr>
+<tr>
+<td><a href="https://drive.google.com/file/d/1FYDpskkRdHCHbx-Rh9Uc6l4U7X0JC8et/view?usp=sharing"><img src="https://files.hoppel.us/techdogs/TARDIS/draw_io.png" alt="draw_icon"></a></td>
+<td><a href="https://files.hoppel.us/techdogs/TARDIS/IoT_TARDIS_UML_DIAGRAMS_component.png"><img src="https://files.hoppel.us/techdogs/TARDIS/IoT_TARDIS_UML_DIAGRAMS_component_tn.png" alt="Component_tn"></a></td>
+<td><a href="https://files.hoppel.us/techdogs/TARDIS/IoT_TARDIS_UML_DIAGRAMS-Use.png"><img src="https://files.hoppel.us/techdogs/TARDIS/IoT_TARDIS_UML_DIAGRAMS-Use-K9_tn.png" alt="Use_tn"></a></td>
+<td><a href="https://files.hoppel.us/techdogs/TARDIS/IoT_TARDIS_UML_DIAGRAM_entity.png"><img src="https://files.hoppel.us/techdogs/TARDIS/IoT_TARDIS_UML_DIAGRAM_entity_tn.png" alt="entity_tn"></a></td>
+<td><a href="https://files.hoppel.us/techdogs/TARDIS/IoT_TARDIS_UML_DIAGRAMS_class.png"><img src="https://files.hoppel.us/techdogs/TARDIS/IoT_TARDIS_UML_DIAGRAMS_class_tn.png" alt="class_tn"></a></td>
+<td><a href="https://files.hoppel.us/techdogs/TARDIS/IoT_TARDIS_UML_DIAGRAMS_sqlite.png"><img src="https://files.hoppel.us/techdogs/TARDIS/IoT_TARDIS_UML_DIAGRAMS_sqlite_tn.png" alt="sqlite_tn"></a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="project-documentation">Project Documentation</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://www.evernote.com/pub/rhoppel/iottardis">IoT TARDIS Project: PUBLIC Evernote Notebook</a></td>
+<td><a href="http://hs2:8080/secure/RapidBoard.jspa?rapidView=10&amp;selectedIssue=ESP-6">IoT TARDIS Project [JIRA PM]</a></td>
+<td><a href="https://goo.gl/TqXi6L">IoT TARDIS Project [Evernote Notebook]</a></td>
+<td><a href="https://login.live.com/login.srf?wa=wsignin1.0&amp;rpsnv=13&amp;ct=1568786824&amp;rver=7.1.6819.0&amp;wp=MBI_SSL_SHARED&amp;wreply=https:%2F%2Fonedrive.live.com%2Fview.aspx%3Fresid%3D88FCEE2150B75169%2521394362%26id%3Ddocuments%2520onenote:https:%2F%2Fd.docs.live.net%2F88fcee2150b75169%2FArchive%2FDocuments%2FIOT%2520TARDIS%2520Project%2F&amp;lc=1033&amp;id=250206&amp;cbcxt=sky&amp;cbcxt=sky">IoT TARDIS Project - OneNote notebook</a></td>
+<td><a href="https://github.com/rhoppel/lodge-nodered-nodemcu">GitHub Node-red repository</a></td>
+</tr>
+</tbody>
+</table>
+<p><a href="https://files.hoppel.us/techdogs/TARDIS/jira_iot_tardis.png"><img src="https://files.hoppel.us/techdogs/TARDIS/jira_iot_tardis_tn.png" alt="jira_tn"></a>  <a href="https://www.evernote.com/pub/rhoppel/iottardis"><img src="https://files.hoppel.us/techdogs/TARDIS/evernote_public_tn.png" alt="evernote_tn"></a></p>
+<h2 id="project-style">Project Style</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a style="color:white">[background color]</td>
+<td><a style="color:#82624b">#82624b</a></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a style="color:white">[text colors]</td>
+<td><a style="color:#7faedb">#7faedb</a></td>
+<td><a style="color:#ed7d31">#ed7d31</a></td>
+<td><a style="color:white">white</a></td>
+<td><a style="color:LightBlue">LightBlue</a></td>
+</tr>
+<tr>
+<td><a style="color:white">[Fonts]</td>
+<td><a href="https://fonts.google.com/specimen/Fjalla+One?selection.family=Fjalla+One">Font: Fjalla One</a></td>
+<td><a href="https://fonts.google.com/specimen/Anaheim?selection.family=Anaheim">Font: Anaheim</a></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="live-node-red">Live Node-Red</h2>
+<script language="JavaScript"]> 
+	document.write('<a style="color:LightBlue;" target="_blank" href="' + window.location.protocol + '//' + window.location.hostname + ':1880' +  '" >Node Red [Control Panel]</a>' ); 
+</script>
+<ul>
+<li>default user is READ-only</li>
+</ul>
+<script language="JavaScript"]>
+	document.write('<a style="color:LightBlue;" target="_blank" href="' + window.location.protocol + '//' + window.location.hostname + ':1880' +  '/ui" >Node Red [UI Desktop]</a>' );
+</script>
+<ul>
+<li>[user:password] = node-red-user : node-red-user-default</li>
+</ul>
+<h2 id="live-platform-tools">Live Platform Tools</h2>
+<h3 id="for-local-network-use-only">for local network use only</h3>
+<script language="JavaScript"]>
+	document.write('<a style="color:LightBlue;" target="_blank" href="' + window.location.protocol + '//' + window.location.hostname + ':56000' +  '/mjpeg" >WebCam [host]</a>' );
+</script>
+<script language="JavaScript"]>
+document.write('<a style="color:LightBlue;" target="_blank" href="' + window.location.protocol + '//' + window.location.hostname + ':10000' +  '" >Webmin Adminstrator</a>' );
+</script>
+<script language="JavaScript"]>
+	document.write('<a style="color:LightBlue;" target="_blank" href="' + window.location.protocol + '//' + window.location.hostname + ':8888' +  '" >RPI Monitor</a>' );
+</script>
+<p><a href="/phpliteadmin">SQLite Administrator</a>
+<a href="/phpsysinfo%22">System Information</a></p>
+<h2 id="supporting-technical-documents">Supporting Technical Documents</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Here-Cheatsheet">Markdown Cheatsheet</a></td>
+<td><a href="http://www.simplehtmlguide.com/cheatsheet.php">HTML Cheatsheet</a></td>
+<td><a href="https://nodered.org/docs/">Node-Red Docs</a></td>
+<td><a href="https://nodered.org/blog/">Node-Red Blog</a></td>
+</tr>
+<tr>
+<td><a href="https://github.com/node-red/node-red/releases">Node-Red Releases</a></td>
+<td><a href="https://docs.jsonata.org">JSONata</a></td>
+<td>[Raspberry Pi Docs]</td>
+<td>[RPi-clone]</td>
+</tr>
+<tr>
+<td><a href="https://www.raspberrypi.org/documentation/hardware/raspberrypi/README.md">Raspberry Pi Hardware</a></td>
+<td><a href="https://nodemcu.readthedocs.io/en/master/">NodeMCU Docs</a></td>
+<td><a href="https://www.lua.org/manual/5.1/"> Lua 5.1 Reference</a></td>
+<td><a href="https://github.com/LuaDist/luasrcdiet"> Lua LuaSrcDiet</a></td>
+</tr>
+<tr>
+<td><a href="https://iotbytes.wordpress.com/managing-files-with-nodemcu/"> Lua File Operations on ESP826</a></td>
+<td><a href="https://www.espressif.com/sites/default/files/documentation/2c-esp8266_non_os_sdk_api_reference_en.pdf"> ESP8266 Non-OS SDK API Reference</a></td>
+<td><a href="https://github.com/pellepl/spiffs">SPIFFS FLASH file system</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://wiki.wemos.cc/start">WeMos Devices</a></td>
+<td><a href="https://www.aliexpress.com/store/1331105">WeMos Store</a></td>
+<td><a href="https://nurdspace.nl/ESP8266">ESP8266</a></td>
+<td><a href="https://en.wikipedia.org/wiki/Web_colors">Web Colors</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="development-tools">Development Tools</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://bramp.github.io/js-sequence-diagrams/">js sequence diagrams</a></td>
+<td><a href="https://marxi.co/">marxi.co markup editor for Evernote</a></td>
+<td><a href="https://www.draw.io/">draw.io diagramming</a></td>
+<td><a href="https://iotbytes.wordpress.com/sqlite-db-on-raspberry-pi/">SQLite DB on Raspberry Pi</a></td>
+<td><a href="https://etcher.io/">Etcher: Burn SD card images</a></td>
+<td><a href="https://github.com/nodemcu/nodemcu-firmware/blob/master/docs/en/spiffs.md">spiffmsg - Manipulate SPI FLASH file systems images</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="technical-social-groups">Technical Social Groups</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://discourse.nodered.org/">Node-Red Discourse Discussion Group</a></td>
+<td><a href="https://groups.google.com/forum/#!forum/node-red">Node-Red Google Group</a></td>
+<td><a href="http://node-red.blogspot.com">Learning Node-Red</a></td>
+<td><a href="http://nodered.org/black">black for Node-Red</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="www-and-security">WWW and Security</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://letsencrypt.org/">Let's Encrypt</a></td>
+<td><a href="https://certbot.eff.org/">CertBot</a></td>
+<td><a href="http://www.haproxy.org/">HAproxy</a></td>
+<td><a href="https://www.ssllabs.com/ssltest/analyze.html?d=techdogs.us">Test SSL</a></td>
+<td><a href="https://domains.google.com">Google Domains</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="home-assistant">Home Assistant</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://www.home-assistant.io/">Home Assistant</a></td>
+<td><a href="https://www.awesome-ha.com/">Awesome Home Assistant</a></td>
+<td><a href="https://github.com/home-assistant/hassos">HassOs hypervisor</a></td>
+<td><a href="(https://buildroot.org/)">Buildroot (used to create HassOs)</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="ideas">Ideas</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="http://techdogs.us">techDogs</a></td>
+<td><a href="https://tech.scargill.net/">Scargill's Tech Blog</a></td>
+<td><a href="https://bitbucket.org/snippets/scargill/">Scargill Snippets</a></td>
+</tr>
+<tr>
+<td><a href="https://www.webpagefx.com/blog/web-design/the-history-of-css-resets/">more on CSS reset</a></td>
+<td><a href="https://tech.scargill.net/home-:control-2016/">Home Control 2017</a></td>
+<td><a href="https://tech.scargill.net/nextion-wifi-touch-display/">Nextion WiFi display</a></td>
+</tr>
+</tbody>
+</table>
+<p><a target="_blank" href="https://en.wikipedia.org/wiki/TARDIS"><img src="https://portfolio.hoppel.us/resources/png/tardis4a.png" alt="TARDIS" class="center tardis"></a></p>
+<h2 id="panic"><a href="http://demo.techdogs.us:1880/ui/#!/6?socketid=_3Lu59VILtPfKDlyAAAE"><img src="https://files.hoppel.us/techdogs/TARDIS/panic.png" alt="panic"></a></h2>
+
+    </body>
+    </html>
