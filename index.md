@@ -50,7 +50,7 @@
 
 <p class="intro">the remote control center for the universe<br/>[Raspberry Pi, NodeMCU and Node-Red]</p>
 
-## Hardware Platforms [one __tiny__ server & one __tiny__ remote node]
+## Hardware Platforms [__tiny__ server & __tiny__ remote node]
 * self-contained host platform: **Raspberry Pi 3 [node-red flow editor & controller, Apache webserver, webcam]**
 * remote node platform: **WeMos D1 mini ESP8266** 
 
