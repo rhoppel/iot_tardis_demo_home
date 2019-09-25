@@ -54,7 +54,9 @@
 * self-contained host platform: **Raspberry Pi 3 [node-red flow editor & controller, Apache webserver, webcam]**
 * remote node platform: **WeMos D1 mini ESP8266** 
 
-[![demo_tn]][demo] [![breadboard_tn]][breadboard] [![schematic_bb_tn]][schematic_bb]
+| | | |
+|---|---|---|
+[![demo_tn]][demo] | [![breadboard_tn]][breadboard] | [![schematic_bb_tn]][schematic_bb]
 
 ###### click to project slide __3__ for demo diagram
 
@@ -176,7 +178,9 @@ Configuration | Main Control | Update Node |
 [IoT TARDIS Project - OneNote notebook]: https://login.live.com/login.srf?wa=wsignin1.0&rpsnv=13&ct=1568786824&rver=7.1.6819.0&wp=MBI_SSL_SHARED&wreply=https:%2F%2Fonedrive.live.com%2Fview.aspx%3Fresid%3D88FCEE2150B75169%2521394362%26id%3Ddocuments%2520onenote:https:%2F%2Fd.docs.live.net%2F88fcee2150b75169%2FArchive%2FDocuments%2FIOT%2520TARDIS%2520Project%2F&lc=1033&id=250206&cbcxt=sky&cbcxt=sky
 [GitHub Node-red repository]: https://github.com/rhoppel/lodge-nodered-nodemcu
 
-[![jira_tn]][jira]  [![evernote_tn]][IoT TARDIS Project: PUBLIC Evernote Notebook]
+| | |
+|---|---|
+[![jira_tn]][jira]  | [![evernote_tn]][IoT TARDIS Project: PUBLIC Evernote Notebook]
 
 [jira_tn]: https://files.hoppel.us/techdogs/TARDIS/jira_iot_tardis_tn.png
 [jira]: https://files.hoppel.us/techdogs/TARDIS/jira_iot_tardis.png
