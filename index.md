@@ -81,8 +81,6 @@ Status | I/O Pin Status | WebCam
 |---|---|---|---|
 Node-Red Web UI controls K9-node | Monitor Node-Red Status | K9-node live Webcam
 [![main_ui_tn_live]][main_ui_i] | [![main_tn_live]][main_i] | [![K9_2_live_tn]][K9_i] |
-default user is READ-only | user: *node-red-user* | [![panic]][system_ui] |
-| | password: *node-red-user-default* |
 
 ## Project Images [static]
 
